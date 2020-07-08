@@ -1,0 +1,82 @@
+def valid_solution(board):
+    correctcolumns=0
+    correctrows=0
+    correctblocks=0
+    index=0
+    for i in board:
+        if sorted(i)==[1,2,3,4,5,6,7,8,9]:
+            correctrows+=1
+    while index<9:
+        y=[]
+        for i in board:
+            y.append(i[index])
+        if sorted(y)==[1,2,3,4,5,6,7,8,9]:
+            correctcolumns+=1
+        index+=1
+    y=[]
+    z=[]
+    w=[]
+    y.append(board[0])
+    y.append(board[1])
+    y.append(board[2])
+    z.append(board[3])
+    z.append(board[4])
+    z.append(board[5])
+    w.append(board[6])
+    w.append(board[7])
+    w.append(board[8])
+    block1 = []
+    block2 = []
+    block3 = []
+    blocks=[block1, block2, block3]
+    for i in y:
+        block1.append(i[0])
+        block1.append(i[1])
+        block1.append(i[2])
+        block2.append(i[3])
+        block2.append(i[4])
+        block2.append(i[5])
+        block3.append(i[6])
+        block3.append(i[7])
+        block3.append(i[8])
+    for block in blocks:
+        if sorted(block)==[1,2,3,4,5,6,7,8,9]:
+            correctblocks+=1
+    block1 = []
+    block2 = []
+    block3 = []
+    blocks = [block1, block2, block3]
+    for i in z:
+        block1.append(i[0])
+        block1.append(i[1])
+        block1.append(i[2])
+        block2.append(i[3])
+        block2.append(i[4])
+        block2.append(i[5])
+        block3.append(i[6])
+        block3.append(i[7])
+        block3.append(i[8])
+    for block in blocks:
+        if sorted(block) == [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+            correctblocks += 1
+    block1 = []
+    block2 = []
+    block3 = []
+    blocks = [block1, block2, block3]
+    for i in z:
+        block1.append(i[0])
+        block1.append(i[1])
+        block1.append(i[2])
+        block2.append(i[3])
+        block2.append(i[4])
+        block2.append(i[5])
+        block3.append(i[6])
+        block3.append(i[7])
+        block3.append(i[8])
+    for block in blocks:
+        if sorted(block) == [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+            correctblocks += 1
+    if correctblocks==9 and correctcolumns==9 and correctrows==9:
+        return True
+    else:
+        return False
